@@ -1,0 +1,54 @@
+CREATE DATABASE SistemaControleEstoque;
+USE SistemaControleEstoque;
+
+CREATE TABLE Fornecedores (
+    fornecedorID INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    contato VARCHAR(100),
+    endereco VARCHAR(255)
+);
+
+CREATE TABLE Produtos (
+    produtoID INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    quantidade INT NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    fornecedorID INT,
+    FOREIGN KEY (fornecedorID) REFERENCES Fornecedores(fornecedorID)
+);
+
+CREATE TABLE PedidosReposicao (
+    pedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    produtoID INT,
+    quantidade INT NOT NULL,
+    data_pedido DATE NOT NULL,
+    FOREIGN KEY (produtoID) REFERENCES Produtos(produtoID)
+);
+
+INSERT INTO Fornecedores (nome, contato, endereco) VALUES
+('Fornecedor A', 'contato@fornecedora.com', 'Rua A, 123'),
+('Fornecedor B', 'contato@fornecedorB.com', 'Avenida B, 456');
+
+INSERT INTO Produtos (nome, descricao, quantidade, preco, fornecedorID) VALUES
+('Produto X', 'Descrição do Produto X', 100, 29.99, 1),
+('Produto Y', 'Descrição do Produto Y', 200, 39.99, 2);
+
+INSERT INTO PedidosReposicao (produtoID, quantidade, data_pedido) VALUES
+(1, 50, '2024-09-01'),
+(2, 30, '2024-09-05');
+
+SELECT * FROM Produtos;
+SELECT * FROM PedidosReposicao;
+SELECT * FROM Fornecedores;
+
+UPDATE Produtos
+SET quantidade = quantidade + 50
+WHERE produtoID = 1;
+
+DELETE FROM Produtos
+WHERE produtoID = 3;
+
+DELETE FROM Fornecedores
+WHERE fornecedorID = 2;
+
