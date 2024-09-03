@@ -1,0 +1,97 @@
+Você foi contratado por uma empresa para desenvolver um Sistema de Controle de Estoque que permitirá gerenciar de maneira eficiente os produtos, fornecedores e pedidos de reposição. O objetivo é criar um banco de dados que facilite a administração do estoque, garantindo que as informações sobre produtos, fornecedores e pedidos sejam armazenadas e acessadas de forma eficiente.
+
+Objetivos:
+
+Gerenciamento de Produtos: Armazenar informações detalhadas sobre os produtos em estoque, como nome, descrição, quantidade disponível e preço.
+Gerenciamento de Fornecedores: Registrar dados dos fornecedores que fornecem os produtos, incluindo nome, contato e endereço.
+Gerenciamento de Pedidos de Reposição: Manter registros dos pedidos de reposição realizados para garantir que o estoque esteja sempre adequado, incluindo data do pedido e quantidade solicitada.
+Requisitos:
+
+Criação do Banco de Dados:
+
+Crie um banco de dados chamado SistemaControleEstoque.
+Criação das Tabelas:
+
+Crie uma tabela Fornecedores para armazenar informações sobre os fornecedores.
+Crie uma tabela Produtos para armazenar informações sobre os produtos, com referência aos fornecedores.
+Crie uma tabela PedidosReposicao para registrar os pedidos de reposição.
+Inserção de Dados:
+
+Insira dados de exemplo nas tabelas Fornecedores, Produtos e PedidosReposicao.
+Consultas e Relatórios:
+
+Consulte todos os produtos em estoque.
+Verifique os pedidos de reposição realizados.
+Obtenha informações sobre os fornecedores.
+Atualizações e Exclusões:
+
+Atualize a quantidade de produtos em estoque após o recebimento de pedidos.
+Exclua registros desnecessários, como produtos descontinuados ou fornecedores que não são mais utilizados.
+Desafio: Implemente o sistema conforme os passos descritos e verifique se todas as funcionalidades estão operando corretamente. As consultas devem fornecer as informações necessárias para uma gestão eficaz do estoque.
+
+# Sistema de Controle de Estoque
+
+Este repositório contém o código SQL para implementar um Sistema de Controle de Estoque. O sistema é projetado para gerenciar produtos, fornecedores e pedidos de reposição de maneira eficiente.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `SistemaControleEstoque` possui as seguintes tabelas:
+
+- **Fornecedores**: Armazena informações sobre os fornecedores.
+  - `fornecedorID`: Identificador único do fornecedor.
+  - `nome`: Nome do fornecedor.
+  - `contato`: Contato do fornecedor.
+  - `endereco`: Endereço do fornecedor.
+
+- **Produtos**: Armazena informações sobre os produtos em estoque.
+  - `produtoID`: Identificador único do produto.
+  - `nome`: Nome do produto.
+  - `descricao`: Descrição do produto.
+  - `quantidade`: Quantidade disponível em estoque.
+  - `preco`: Preço do produto.
+  - `fornecedorID`: Referência ao fornecedor do produto.
+
+- **PedidosReposicao**: Registra os pedidos de reposição para os produtos.
+  - `pedidoID`: Identificador único do pedido de reposição.
+  - `produtoID`: Referência ao produto que está sendo reposto.
+  - `quantidade`: Quantidade solicitada no pedido.
+  - `data_pedido`: Data em que o pedido foi realizado.
+
+## Scripts SQL
+
+### Criação do Banco de Dados e Tabelas
+
+Os scripts para criar o banco de dados e as tabelas estão no início do arquivo.
+
+### Inserção de Dados
+
+Scripts para adicionar dados de exemplo nas tabelas `Fornecedores`, `Produtos` e `PedidosReposicao`.
+
+### Consultas e Relatórios
+
+Scripts para consultar e visualizar:
+- Todos os produtos em estoque.
+- Pedidos de reposição realizados.
+- Informações sobre fornecedores.
+
+### Atualizações e Exclusões
+
+Scripts para:
+- Atualizar a quantidade de produtos em estoque.
+- Excluir registros desnecessários.
+
+## Instruções de Uso
+
+1. Execute os scripts SQL fornecidos para criar o banco de dados e as tabelas.
+2. Insira dados de exemplo usando os scripts de inserção.
+3. Utilize os scripts de consulta para gerar relatórios e obter informações.
+4. Use as instruções de atualização e exclusão para manter o banco de dados atualizado.
+
+## Contribuições
+
+Sinta-se à vontade para contribuir com melhorias ou sugestões. Envie pull requests ou abra issues para discussões.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
